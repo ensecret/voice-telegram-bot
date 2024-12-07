@@ -125,7 +125,7 @@ async def inline_query(update: Update, context: CallbackContext):
     logger.info(f"Найдено {len(matched_voices)} голосовых сообщений для пользователя {user.id}.")
 
     results = []
-    for voice in matched_voices[:50]:  # Ограничиваем до 50 результатов
+    for voice in matched_voices[:500]:  # Ограничиваем до 50 результатов
         name, file_id = voice
         # Заполняем title корректным значением, чтобы избежать ошибки Audio_title_empty
         results.append(
